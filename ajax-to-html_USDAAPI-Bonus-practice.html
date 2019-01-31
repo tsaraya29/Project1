@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>USDA Listing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Nutrition Reference Table</h2>
+    <p>This table lists brief Nutritional information for selected foods</p>
+    <table class="table" id ="table">
+      <thead>
+        <tr>
+          <!-- The scope attribute specifies that this is a header for a column -->
+          <th scope="col">Food Name</th>
+          <th scope="col">Calories</th>
+          <th scope="col">Fats</th>
+          <th scope="col">Carbs</th>
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Peanut Butter</td>
+          <td>200</td>
+          <td>19</td>
+          <td>2</td>
+
+        </tr>
+        <td id="name"></td>
+        <td id="cals">
+        <td id="fats"></td>
+        <td id ="carbs"></td> 
+
+        </td>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // The below code fills in the first row of the table
+    var ndbno = "01009";
+    var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
+
+    var createRow = function(data) {
+        var tRow = $("<tr>");
+        var foodName = $("<td>").text (response.report.food.name);
+        var foodCal = $("<td>").text(response.report.food.nutrients[1].value);
+        var foodFat = $("<td>").text(response.report.food.nutrients[4].value + " g");
+        var foodCarbs = $("<td>").text(response.report.food.nutrients[6].value + " g");
+        tRow.append(foodName,foodCal,foodFat,foodCarbs);
+        $("tbody").append(tRow);
+    };
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+ 
+      createRow(response);
+      
+      
+    });
+
+    // Repeat the above logic to add rows for two more movies of your choice
+
+    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
+
+   
+  </script>
+</body>
+
+</html>
