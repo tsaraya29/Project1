@@ -42,9 +42,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    // The below code fills in the first row of the table
-    var ndbno = "01009";
-    var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
+    
 
     var createRow = function(data) {
         var tRow = $("<tr>");
@@ -55,8 +53,11 @@
         tRow.append(foodName,foodCal,foodFat,foodCarbs);
         $("tbody").append(tRow);
     };
-
-    $.ajax({
+      // The below code fills in the first row of the table
+      var ndbno = "01009";
+      var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc"; 
+   
+      $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
@@ -70,7 +71,9 @@
 
     // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
 
-   
+   // The below code fills in the first row of the table
+    var ndbno = "01009";
+    var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
   </script>
 </body>
 
