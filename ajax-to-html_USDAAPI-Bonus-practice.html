@@ -44,7 +44,7 @@
   <script type="text/javascript">
     
 
-    var createRow = function(data) {
+    var createRow = function(response) {
         var tRow = $("<tr>");
         var foodName = $("<td>").text (response.report.food.name);
         var foodCal = $("<td>").text(response.report.food.nutrients[1].value);
@@ -53,27 +53,23 @@
         tRow.append(foodName,foodCal,foodFat,foodCarbs);
         $("tbody").append(tRow);
     };
-      // The below code fills in the first row of the table
-      var ndbno = "01009";
+   
+      
+    var nutritionInfo = function(ndbno) {
+      
       var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc"; 
    
       $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
- 
-      createRow(response);
-      
-      
-    });
-
-    // Repeat the above logic to add rows for two more movies of your choice
-
-    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
-
-   // The below code fills in the first row of the table
-    var ndbno = "01009";
-    var queryURL = "https://api.nal.usda.gov/ndb/reports/?ndbno=" + ndbno + "&type=s&format=json&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
+    }).then(function(response) { 
+      createRow(response);         
+    });    
+      };
+     
+     
+     nutritionInfo("01009");
+    
   </script>
 </body>
 
