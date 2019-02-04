@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Healthy Recipe Application</h1>
+        <!-- This form will be where users input data about the foods they like -->
+    <form id="food-form">
+            <label for="food-input">Search for your favorite food</label>
+            <input type="text" id="food-input">      
+            <!-- This button will trigger our AJAX call -->
+            <input id="find-food" type="submit" value="Food Search">
+          </form>
+          <br>
+          <div id="buttons-view"></div>     
+          <div id="foodInfo"></div>
+      
+    </div>
+    
+</body>
+</html>
