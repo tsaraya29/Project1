@@ -14,14 +14,44 @@
                 <h1>Healthy Food Recipe Applet</h1>
             </header>
             <section class="nutrition">
-                    <form id="food-form">
-                            <label for="food-input">Enter a food name to get nutrional information </label>
-                            <input type="text" id="food-input"><br>
-                      
-                            <!-- This button will trigger our AJAX call -->
-                            <input id="find-food" type="submit" value="Food Search">
-                          </form> 
-            </section>
+                <form id="food-form">
+                <label for="food-input">Enter a food name to get nutrional information:  </label><br />
+                <input type="text" id="food-input">            
+                <!-- This button will trigger our AJAX call -->
+                <input id="find-food" type="submit" value="Search">
+                </form> 
+                <hr>
+                
+    </section>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <section class="foodInfo">
+                
+                <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$("#find-food").on("click", function(event) {
+    event.preventDefault();
+    // Here we grab the text from the input box
+    var myfood = $("#food-input").val().trim();          
+    var queryURL = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + myfood +"&max=1&offset=0&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
+        $.ajax({
+            url: queryURL,
+            method:"GET"
+            })
+            .then(function(response) {
+            var foodHolder = $("<div>");
+            var foodName = response.list.item[0].name;       
+            $("#foodInfo").html(foodName);
+            })
+       //NEED FORM VALIDATION HERE
+             
+        });
+
+ </script>
+ <div id="foodInfo"></div>      
+ 
+ </section>
 
         </div>
         <div class = "bottomsection">
