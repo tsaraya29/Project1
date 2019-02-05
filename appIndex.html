@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Favorite Foods</title>
+  <title>Healthy Foods & Recipes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
 <body>
@@ -40,16 +40,31 @@ $("#find-food").on("click", function(event) {
             method:"GET"
             })
             .then(function(response) {
-            var foodHolder = $("<div>");
-            var foodName = response.list.item[0].name;       
-            $("#foodInfo").html(foodName);
+                console.log(response);
+            var nutrional = $("<div>");
+            var foodName = response.list.item[0].name;
+            var ndbno = response.list.item[0].ndbno;      
+            $("#foodInfo").html("<strong>USDA Food Name: </strong>" + foodName );
+            $("#link").html("<strong>Nutrional Info: </strong>");
+            $("#calories").html("Calories: ");
+            $("#fats").html("Fats (g): ");
+            $("#sugars").html("Sugars (g): ");
+            $("#carbs").html("Carbohydrates (g): ");
+           
             })
        //NEED FORM VALIDATION HERE
              
         });
 
  </script>
- <div id="foodInfo"></div>      
+ <div id="foodInfo">     
+ </div>
+ <div id="link"></div>
+ <div id="calories"></div>
+ <div id="fats"></div>
+ <div id="sugars"></div>
+ <div id="carbs"></div>
+
  
  </section>
 
