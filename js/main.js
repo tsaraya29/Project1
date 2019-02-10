@@ -25,16 +25,16 @@ $("#find-food").on("click", function(event) {
 
                     .then(function(response) {
                         console.log("This is the 2nd Ajax request: ", response); 
-                        var calories = response.report.foods[0].nutrients[1].value;
+                        var sugars = response.report.foods[0].nutrients[1].value;
                         console.log ("This is the calories: ", calories);
-                        var fats = response.report.foods[0].nutrients[0].value;                        
-                        var sugars 
-                        var carbs = response.report.foods[0].nutrients[2].value;
+                        var fats  = response.report.foods[0].nutrients[2].value;                       
+                        var calories = response.report.foods[0].nutrients[0].value;
+                        var carbs  = response.report.foods[0].nutrients[3].value;
                         
-                        $("#calories").html("Calories: ");
-                        $("#fats").html("Fats (g): "+ fats);
-                        $("#sugars").html("Sugars (g): ");
-                        $("#carbs").html("Carbohydrates (g): ")
+                        $("#calories").html("<strong>Calories: </strong>" + calories);
+                        $("#fats").html("<strong>Fats (g): </strong>"+ fats);
+                        $("#sugars").html("<strong>Sugars (g): </strong>" + sugars);
+                        $("#carbs").html("<strong>Carbohydrates (g): </strong>" + carbs)
                     });
 
                 });
