@@ -9,22 +9,33 @@
 
 <body>
   <div class="container">
-    <h1>Food Search</h1>
-
+    <header><h1>Video Search</h1></header>
+    
+    <div class="row">
+      <div class="col-md-6 col md-offset-3">
+          <form id="food-form" action="#">
+             <p><label for="food-input" placeholder="enter food name">Search </label>
+              <input type="text" id="food-input"><br></p> 
+        
+              <!-- This button will trigger our AJAX call -->
+              <input id="find-food" type="submit" value="Food Search">
+            </form>
+      </div>
+    </div>
     <!-- This form will be where users input data about the foods they like -->
-    <form id="food-form">
-      <label for="food-input">Search for your favorite food</label>
-      <input type="text" id="food-input"><br>
-
-      <!-- This button will trigger our AJAX call -->
-      <input id="find-food" type="submit" value="Food Search">
-    </form>
+    
     <br>
     <div id="buttons-view"></div>     
     <div id="foodInfo"></div>
-
+      
+    <!--scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="js/main.js"></script>
+
+
+
+    <!-- <script type="text/javascript">
     //Initial Array of Foods Searched     
     var foodButtons = [];
 
@@ -90,9 +101,9 @@
         renderButtons();            
         });
       $(document).on("click", ".food-btn", displayFoodInfo);
-      renderButtons();   
+    //   renderButtons();   
                
-    </script>
+     </script> -->
   </div>
 </body>
 
