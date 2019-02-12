@@ -30,6 +30,10 @@ header, section {
     width: 560px;
     background-color: #fff;
 }
+
+header {
+    margin-top: 0;
+}
  .logo {
      width: 120px;  
      padding: 10px ;  
@@ -41,7 +45,7 @@ header, section {
  }
 
  main {
-     padding: 170px 18px 10px;
+     padding: 370px 18px 10px;
  }
  article {
      display: flex;
@@ -50,7 +54,6 @@ header, section {
      border: 2px solid #fff;
      border-radius: 8px;
      margin: 0 auto;
-
 
  }
  .thumb {
