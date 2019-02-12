@@ -32,7 +32,7 @@ header, section {
 }
  .logo {
      width: 120px;  
-     padding: 10px;  
+     padding: 10px ;  
      
  }
 
@@ -54,7 +54,8 @@ header, section {
 
  }
  .thumb {
-     height: 70px;
+     height: 90px;
+     width: 120px;
      border-radius: 4px;
 
 
