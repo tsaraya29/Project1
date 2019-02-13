@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/Mom/Documents/NUBootCamp/Project1/index2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>YouTube Video Search</title>  
+  <link rel="stylesheet" type="text/css" media="screen" href="file:///C:/Users/Mom/Documents/NUBootCamp/Project1/css/style2.css">
+</head>
+
+<body>
+  <div class="container">
+    
+    <header>
+      <img src="./YouTube Video Search_files/YouTube-logo-full_color_light.svg" alt="" class="logo">
+    </header>      
+    <div id="search-container">
+    
+    <section id="video">
+        <h1>Video Search</h1>
+        
+        <form id="video-form" action="file:///C:/Users/Mom/Documents/NUBootCamp/Project1/index2.html#">
+            <p><label for="video-input">Search </label>
+             <input type="text" id="video-input" placeholder="enter video name"><br></p> 
+       
+             <!-- This button will trigger our AJAX call -->
+             <input id="find-food" type="submit" value="Food Search">
+           </form>
+    </section>
+    </div>  
+           <main id="main">
+            <article>
+             <img src="./YouTube Video Search_files/hqdefault.jpg" alt="" class="thumb">
+
+              <div class="details">
+                <h4>Title</h4>
+                <p>Short description of video</p>
+              </div>
+            </article>              
+          </main>    
+    
+     
+    <!-- This will be where users can log in to save recipes -->
+    
+    <br>
+    
+    <div id="main"></div>
+      
+    <!--scripts-->
+    <script src="./YouTube Video Search_files/jquery.min.js.download"></script>
+    
+    <!-- <script 
+     src="js/main.js"></script>  -->
+    <script src="file:///C:/Users/Mom/Documents/NUBootCamp/Project1/js/youtube.js"></script>
+
+
+
+    <!-- <script type="text/javascript">
+    //Initial Array of Foods Searched     
+    var foodButtons = [];
+
+    // displayFoodInfo function re-renders the HTML to display the appropriate content   
+    
+    function displayFoodInfo() {
+
+      var myfood = $(this).attr("data-name");
+      var queryURL = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + myfood +"&max=1&offset=0&api_key=ymSDKlrPsi4IE3TGXxHGSy9tcM7TZiHsMqa72FZc";
+
+       $.ajax({
+            url: queryURL,
+            method:"GET"
+          })
+          .then(function(response) {
+
+            var foodHolder = $("<div>");
+            var foodName = response.list.item[0].name;
+             if (foodName) {
+            console.log(foodName);   
+            $("#foodInfo").html(foodName);
+             }
+             //NEED FORM VALIDATION HERE
+            //  else if (foodName = undefined){             
+            //  $("#foodInfo").html("<p color='red'>Please Enter a valid food name");
+            // 
+            // var item1 = $("<p>").text("Name: " + foodName);
+            // foodHolder.append(item1);           
+          });
+    }
+        
+               
+      // Function for displaying move data
+
+      function renderButtons() {
+            // Deleting the food buttons prior to adding new ones
+        // (this is necessary otherwise you will have repeat buttons)
+        $("#buttons-view").empty();
+        // Looping through the array of food
+        for (var i = 0; i < foodButtons.length; i++) {
+
+                // Then dynamicaly generating buttons for each food in the array
+                // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+                var a = $("<button>");
+                // Adding a class of food-btn to our button
+                a.addClass("food-btn");
+                // Adding a data-attribute
+                a.attr("data-name", foodButtons[i]);
+                // Providing the initial button text
+                a.text(foodButtons[i]);
+                // Adding the button to the buttons-view div
+                $("#buttons-view").append(a);
+            }
+        }
+    
+      $("#find-food").on("click", function(event) {
+
+        event.preventDefault();
+        // Here we grab the text from the input box
+        var myfood = $("#food-input").val().trim();            
+
+        foodButtons.push(myfood);
+        renderButtons();            
+        });
+      $(document).on("click", ".food-btn", displayFoodInfo);
+    //   renderButtons();   
+               
+     </script> -->
+  </div>
+
+
+
+</body></html>

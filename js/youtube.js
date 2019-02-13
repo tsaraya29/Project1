@@ -46,14 +46,14 @@ console.log("Page loaded")
                 <article>
               <img src="${thumb}" alt = "" class="thumb">
               <div class="details">
-                 <h4>${title}</h4>
+                 <strong>${title}</strong>
                 <p>${description}</p>
               </div>
             </article>`
             );      
              });
               };             
-              $('main').on('click', 'article', function () {
+              $('#main').on('click', 'article', function () {
                 var id = $(this).attr('data-key');
                 mainVid(videoId);
             });   

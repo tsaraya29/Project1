@@ -16,7 +16,7 @@ $("#find-food").on("click", function(event) {
             var ndbno = response.list.item[0].ndbno;
             console.log(ndbno); 
                          
-            $("#foodInfo").html("<strong>USDA Food Name: </strong>" + foodName );
+            $("#foodInfo").html("<strong>USDA Food Name: </strong>" + foodName.substring(0,50));
                    
 
                 $.ajax({
