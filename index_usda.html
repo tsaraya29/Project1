@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Foods & Recipes</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/style2.css" /> -->
+
+</head>
+<body>
+    <div class="container">
+        <div class = "topsection">
+            <header>
+                <h1>Healthy Food Recipe Applet</h1>
+            </header>
+            <div class="primary callout">
+            <section class="nutrition">
+                <form id="food-form">
+                        
+                <div class="grid-x grid-padding-x">
+                <div class="large-4 medium-4 cell">
+                    <label>Enter a food name to get nutrional information: </label>
+                    <br />
+                    <input type="text" id="food-input" placeholder="enter food name">             
+                    <!-- This button will trigger our AJAX call -->
+                    <input id="find-food" type="submit" value="Search">
+                </div>
+                    </div> 
+                </form>             
+        </section>
+    </div>                     
+            
+            <section class="foodInfo"> 
+    
+                    <div id="foodInfo">     
+                    </div>                    
+                    <div id="calories"></div>
+                    <div id="fats"></div>
+                    <div id="sugars"></div>
+                    <div id="carbs"></div>
+            </section>
+
+        </div>
+        <div class = "bottomsection">
+            <section class="videos">
+
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    <script src="js/app.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
+
